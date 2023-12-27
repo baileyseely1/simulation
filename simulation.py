@@ -81,7 +81,7 @@ def run_scraping():
         owner_address = get_or_unknown(owner_regex, message_text)  # Extract owner address
         telegram, twitter, website = extract_urls_from_entities(event.message)
 
-        current_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        current_timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
         # Structuring the data
         data = {
